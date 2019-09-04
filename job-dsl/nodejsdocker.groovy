@@ -14,9 +14,9 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('microswami/nodejs')
+            repositoryName('krepo:5000/nodejs')
             tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')
+            registryCredentials('krepo')
             forcePull(false)
             forceTag(false)
             createFingerprints(false)
